@@ -1,3 +1,7 @@
+from heapq import nlargest
+from typing import Iterable
+
+
 def top_n(items, n):
     """
     Return the top n items in an array, in decending order.
@@ -24,4 +28,21 @@ def top_n(items, n):
     top_n = items[-n:]
 
     return top_n[::-1]
+
+
+def top_n_largest(items: Iterable[float], n: int) -> list[float]:
+    """
+    Return the largest n values in descending order.
+
+    Args:
+        items (Iterable[float]): values to search.
+        n (int): number of values to return.
+
+    Returns:
+        list[float]: largest values in descending order.
+    """
+    if n <= 0:
+        return []
+
+    return nlargest(n, items)
 
