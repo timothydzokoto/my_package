@@ -21,5 +21,7 @@ def top_n(items, n):
                 items[j], items[j+1] = items[j+1], items[j]
         
     # Get the last items and return them
-    return items[-n:]
+    top_n = items[-n:]
+
+    return top_n[::-1]
 
